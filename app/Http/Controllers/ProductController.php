@@ -97,10 +97,10 @@ public function show(string $id): View{
 
             // upload new image
             $image = $request->file('image');
-            $image -> storeAs('public\products', $image->hashName());
+            $image -> storeAs('public/products', $image->hashName());
 
             // delete old image
-            Storage::delete('public\products'.$product->image);
+            Storage::delete('public/products'.$product->image);
 
             // update product with new image
             $product->update([
